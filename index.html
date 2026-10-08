@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MKT — Maneet Kaur Tandon. A little scrapbook of things I've built, learned, cooked, painted & figured out.">
+<title>MKT — Maneet Kaur Tandon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f8f3e7; --paper2:#fffdf7; --red:#b52b24; --red2:#8e201c;
+  --green:#183f2a; --green2:#245c3d; --ink:#171715; --cream:#efe4ce;
+  --shadow:0 18px 45px rgba(24,24,18,.12); --line:rgba(23,23,21,.18);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Space Grotesk",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;z-index:20;background-image:url("data:image/svg+xml,%3Csvg width='160' height='160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}.mono{font-family:"DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}.script{font-family:Caveat,cursive}.serif{font-family:"Playfair Display",serif}
+.gingham{background-color:#fffdf7;background-image:linear-gradient(90deg,rgba(181,43,36,.18) 50%,transparent 50%),linear-gradient(rgba(181,43,36,.18) 50%,transparent 50%);background-size:28px 28px}
+.gingham.green{background-image:linear-gradient(90deg,rgba(24,63,42,.16) 50%,transparent 50%),linear-gradient(rgba(24,63,42,.16) 50%,transparent 50%)}
+nav{position:fixed;top:0;left:0;right:0;height:68px;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:0 4vw;mix-blend-mode:multiply}
+.navbrand{font-weight:700;font-size:1.25rem}.navlinks{display:flex;gap:24px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.navlinks a:hover{color:var(--red)}
+.progress{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:49;display:flex;flex-direction:column;gap:8px}.progress i{width:6px;height:6px;border:1px solid var(--green);border-radius:50%;display:block}.progress i.active{background:var(--red)}
+.page{position:relative;min-height:100vh;padding:110px 6vw 100px;overflow:hidden}.page-no{position:absolute;right:5vw;top:92px;color:var(--green)}
+.hero{min-height:100vh;padding:110px 6vw 70px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:5vw}
+.hero-copy{position:relative;z-index:2}.eyebrow{display:inline-block;border:1px solid var(--ink);padding:7px 11px;transform:rotate(-2deg);background:var(--paper2);box-shadow:4px 4px 0 var(--red);margin-bottom:25px}
+h1{font-size:clamp(5rem,14vw,12rem);line-height:.75;margin:0 0 30px;letter-spacing:-.08em}
+.hero h2{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(1.7rem,3vw,3.1rem);line-height:1.05;max-width:700px;margin:0 0 28px}
+.open{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:white;padding:14px 20px;box-shadow:7px 7px 0 var(--red);font-weight:700;letter-spacing:.04em;cursor:pointer;transition:.25s}.open:hover{transform:translate(3px,3px);box-shadow:4px 4px 0 var(--red)}
+.hero-photo{position:relative;justify-self:center;width:min(430px,85%);transform:rotate(2deg)}.hero-photo:before{content:"";position:absolute;top:-25px;left:35%;width:110px;height:30px;background:rgba(181,43,36,.25);transform:rotate(-4deg);z-index:2}.photo-frame{background:#fff;padding:14px 14px 55px;box-shadow:var(--shadow)}.photo-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}.scribble{position:absolute;font:600 2rem Caveat;color:var(--red);z-index:3}.s1{left:-55px;top:16%}.s2{right:-40px;bottom:25%}.s3{left:5%;bottom:3%;transform:rotate(-5deg)}
+.sticker{position:absolute;background:var(--red);color:#fff;padding:11px 15px;transform:rotate(-8deg);font-size:.72rem;font-weight:700;box-shadow:4px 4px 0 var(--green)}
+.section-title{font-family:"Playfair Display",serif;font-size:clamp(3rem,7vw,7rem);line-height:.9;letter-spacing:-.05em;margin:0 0 25px;max-width:950px}
+.lede{font-size:1.05rem;line-height:1.65;max-width:760px}.note{font:600 1.8rem Caveat;color:var(--red)}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:55px}.timeline-card{background:var(--paper2);border:1px solid var(--line);padding:28px;min-height:220px;position:relative;box-shadow:8px 10px 0 rgba(24,63,42,.08)}.timeline-card:nth-child(2){transform:rotate(1.4deg)}.timeline-card:nth-child(3){transform:rotate(-1deg)}.timeline-card:nth-child(4){transform:rotate(1deg)}.timeline-card:nth-child(5){transform:rotate(-1.5deg)}.timeline-card:nth-child(6){transform:rotate(.8deg)}.timeline-card:before{content:"";position:absolute;top:-11px;left:28%;width:90px;height:24px;background:rgba(239,228,206,.9);transform:rotate(-3deg)}.timeline-card h3{font-size:1.5rem;margin:15px 0 10px}.timeline-card .year{color:var(--red);font-weight:700}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center}.photo-stack{position:relative;min-height:520px}.polaroid{position:absolute;background:white;padding:12px 12px 48px;box-shadow:var(--shadow);width:min(350px,75%)}.polaroid img{width:100%;height:360px;object-fit:cover}.p-a{left:4%;top:5%;transform:rotate(-4deg)}.p-b{right:3%;bottom:4%;transform:rotate(5deg)}.tape{position:absolute;width:90px;height:26px;background:rgba(181,43,36,.25);z-index:3}
+.audit-paper{background:#f2ead8;border:1px solid var(--line);padding:30px;position:relative;box-shadow:10px 12px 0 rgba(181,43,36,.10)}.audit-paper:before{content:"WORKING PAPER";position:absolute;right:18px;top:14px;color:var(--red);font:500 .65rem "DM Mono"}.audit-list{display:grid;grid-template-columns:1fr 1fr;gap:11px 30px;margin:25px 0}.audit-list span{border-bottom:1px dashed var(--line);padding-bottom:8px}.stamp-row{display:flex;gap:18px;flex-wrap:wrap;margin:25px 0}.stamp{border:3px solid var(--red);color:var(--red);padding:15px 18px;font-weight:800;transform:rotate(-2deg);font-size:1.2rem}.stamp.green{border-color:var(--green);color:var(--green);transform:rotate(2deg)}
+.transition{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center}.transition h2{font-size:clamp(3.2rem,8vw,8rem);line-height:.85;max-width:1100px;margin:auto}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:45px 0}.metric{background:var(--green);color:#fff;padding:30px;position:relative}.metric:nth-child(2){background:var(--red)}.metric:nth-child(3){background:var(--paper2);color:var(--ink);border:1px solid var(--ink)}.metric b{display:block;font-size:clamp(2.5rem,5vw,5.5rem);line-height:.9}.metric small{font-family:"DM Mono";letter-spacing:.08em}
+.masonry{columns:3 260px;column-gap:18px;margin-top:40px}.masonry figure{break-inside:avoid;margin:0 0 18px;background:#fff;padding:9px;box-shadow:0 10px 25px rgba(0,0,0,.08)}.masonry img{width:100%;display:block;max-height:520px;object-fit:cover}.caption{padding:9px 4px 2px;font:600 1.25rem Caveat;color:var(--red)}
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:40px}.review{background:#fff;padding:18px;box-shadow:var(--shadow);transform:rotate(-1deg)}.review:nth-child(2n){transform:rotate(1.3deg);margin-top:25px}.review img{width:100%;max-height:480px;object-fit:contain;background:#f7f7f7}.quote{font-family:"Playfair Display";font-size:1.6rem;line-height:1.2;padding:18px 5px 2px}.review .tag{color:var(--green);font:500 .68rem "DM Mono";text-transform:uppercase}
+.gallery{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:18px;margin-top:35px}.tile{position:relative;background:#fff;border:1px solid var(--line);padding:10px;min-height:220px;overflow:hidden}.tile.big{grid-row:span 2}.tile img{width:100%;height:100%;object-fit:cover;display:block}.play{position:absolute;left:15px;bottom:15px;background:var(--red);color:#fff;padding:10px 14px;font-weight:700}
+.popup{margin-top:50px;background:var(--paper2);padding:18px;box-shadow:var(--shadow);border:1px solid var(--line);display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}.popup img{width:100%;height:380px;object-fit:cover}
+.hobby-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;margin-top:40px}.board{background:#fff;padding:16px;box-shadow:var(--shadow);position:relative}.board h3{font-size:1.1rem;margin:0 0 12px}.paint-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.paint-grid img{width:100%;height:230px;object-fit:cover}.food-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.food-grid img{width:100%;height:210px;object-fit:cover}.music{background:var(--green);color:white;padding:30px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between}.music a{background:white;color:var(--green);padding:11px 14px;display:inline-block;width:max-content;font-weight:700}.pet-card{margin-top:18px;background:var(--red);color:white;padding:24px;position:relative}.pet-card img{width:100%;height:280px;object-fit:cover;margin:10px 0}.pet-label{font:700 2.1rem Caveat}.pet-stamp{position:absolute;right:15px;top:15px;border:2px solid white;padding:7px;transform:rotate(6deg);font-size:.65rem;font-weight:700}
+.childhood{display:grid;grid-template-columns:.8fr 1.2fr;gap:6vw;align-items:center}.child-pics{display:grid;grid-template-columns:1fr 1fr;gap:18px}.child-pics img{width:100%;height:350px;object-fit:cover;background:#fff;padding:9px;box-shadow:var(--shadow)}.child-pics img:first-child{transform:rotate(-4deg)}.child-pics img:last-child{transform:rotate(4deg);margin-top:45px}
+.connect{min-height:70vh;display:flex;flex-direction:column;justify-content:center}.links{display:flex;gap:15px;flex-wrap:wrap;margin-top:30px}.link{border:1px solid var(--ink);padding:15px 19px;background:var(--paper2);box-shadow:5px 5px 0 var(--green);font-weight:700}.link:hover{background:var(--red);color:#fff;box-shadow:5px 5px 0 var(--green)}
+.footer{padding:25px 6vw 50px;border-top:1px solid var(--line);display:flex;justify-content:space-between}
+.modal{position:fixed;inset:0;background:rgba(16,24,18,.9);z-index:100;display:none;align-items:center;justify-content:center;padding:30px}.modal.show{display:flex}.modal-inner{max-width:1000px;max-height:90vh;position:relative}.modal img,.modal video{max-width:100%;max-height:85vh;display:block;background:#fff}.close{position:absolute;right:-12px;top:-45px;color:#fff;background:var(--red);border:0;padding:9px 13px;font-weight:700;cursor:pointer}
+@media(max-width:850px){nav{height:58px;padding:0 5vw}.navlinks{gap:10px}.hero,.split,.childhood,.popup,.hobby-grid{grid-template-columns:1fr}.hero{padding-top:90px}.hero-photo{width:min(390px,90%)}.timeline{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.gallery .big{grid-column:span 2}.reviews{grid-template-columns:1fr}.photo-stack{min-height:470px}.audit-list{grid-template-columns:1fr}.child-pics img{height:260px}.page{padding-left:5vw;padding-right:5vw}.progress{display:none}}
+</style>
+</head>
+<body>
+<nav><a class="navbrand" href="#home">MKT</a><div class="navlinks"><a href="#work">WORK</a><a href="#life">LIFE</a><a href="#connect">CONNECT</a></div></nav>
+<div class="progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<section id="home" class="hero gingham">
+  <div class="hero-copy">
+    <span class="eyebrow mono">A PERSONAL SCRAPBOOK · 2026</span>
+    <h1>MKT</h1>
+    <h2>Maneet Kaur Tandon — things I've built, learned, cooked, painted & figured out.</h2>
+    <a class="open" href="#story">OPEN THE SCRAPBOOK →</a>
+    <p class="note">Delhi · business · food · content · curiosity</p>
+  </div>
+  <div class="hero-photo">
+    <div class="photo-frame"><img src="assets/asset-01.png" alt="Maneet portrait"></div>
+    <span class="scribble s1">hello, that's me ↗</span>
+    <span class="scribble s2">currently figuring it out</span>
+    <span class="scribble s3">MKT</span>
+    <span class="sticker" style="right:-22px;top:20px">OPEN ME</span>
+  </div>
+</section>
+
+<section id="story" class="page">
+  <span class="page-no mono">MKT / 01</span>
+  <p class="mono">HOW DID WE GET HERE?</p>
+  <h2 class="section-title">A few chapters. None of them went exactly to plan.</h2>
+  <div class="timeline">
+    <article class="timeline-card"><div class="year mono">2020</div><h3>Ryan International School</h3><p>Started with classrooms, curiosity and a habit of making things.</p></article>
+    <article class="timeline-card"><div class="year mono">2020–2023</div><h3>B.Com (Hons.)</h3><p>Sri Guru Gobind Singh College of Commerce, University of Delhi.</p></article>
+    <article class="timeline-card"><div class="year mono">2023–2025</div><h3>Deloitte USI</h3><p>Audit & Assurance → Investment Management.</p></article>
+    <article class="timeline-card"><div class="year mono">2025</div><h3>The Taco Weekend</h3><p>A weekend food experiment turned into a real little business.</p></article>
+    <article class="timeline-card"><div class="year mono">2026</div><h3>Master's Union</h3><p>PGP — Technology & Business Management.</p></article>
+    <article class="timeline-card gingham green"><div class="year mono">NOW</div><h3>Still making things.</h3><p>And still figuring out what's next.</p></article>
+  </div>
+</section>
+
+<section id="work" class="page gingham green">
+  <span class="page-no mono">MKT / 02</span>
+  <div class="split">
+    <div>
+      <p class="mono">DELOITTE USI · SEP 2023 — SEP 2025</p>
+      <h2 class="section-title">BEFORE TACOS, THERE WERE NUMBERS.</h2>
+      <p class="lede">Audit & Assurance → Investment Management. Private equity, hedge funds, mutual funds and asset management.</p>
+      <div class="stamp-row"><div class="stamp">20% FASTER<br><small>than budgeted timelines</small></div><div class="stamp green">PROMOTED →<br><small>Audit Senior Assistant</small></div></div>
+    </div>
+    <div class="audit-paper">
+      <p class="mono">WHAT I ACTUALLY DID</p>
+      <div class="audit-list">
+        <span>Income testing</span><span>NAV testing</span><span>Management fees</span><span>Carried interest</span><span>Capital activity</span><span>Audit risk</span><span>Client meetings</span><span>US offshore presentations</span><span>Mentoring juniors</span>
+      </div>
+      <p class="note">“Turns out auditing taught me something useful: I really like figuring out why numbers look the way they do.”</p>
+    </div>
+  </div>
+  <div class="photo-stack">
+    <div class="polaroid p-a"><img src="assets/asset-20.JPG" alt="Deloitte portrait"></div>
+    <div class="polaroid p-b"><img src="assets/asset-21.jpg" alt="Deloitte building"></div>
+  </div>
+</section>
+
+<section class="page transition gingham" id="twist">
+  <span class="page-no mono">MKT / 03</span>
+  <div>
+    <p class="mono">THE PLOT TWIST</p>
+    <h2>THEN I DECIDED TO MAKE SOMETHING PEOPLE COULD ACTUALLY EAT.</h2>
+    <a class="open" href="#ttw" style="margin-top:35px">ENTER THE TTW KITCHEN →</a>
+  </div>
+</section>
+
+<section id="ttw" class="page">
+  <span class="page-no mono">MKT / 04</span>
+  <p class="mono">THE TACO WEEKEND</p>
+  <h2 class="section-title">A weekend experiment. Then a small business.</h2>
+  <p class="lede">After leaving Deloitte, Maneet built The Taco Weekend end-to-end — product development, branding, content, marketing, packaging, customer communication, sales and fulfilment.</p>
+  <div class="metrics">
+    <div class="metric"><b>1,000+</b><small>ORDERS</small></div>
+    <div class="metric"><b>₹3.2L+</b><small>REVENUE</small></div>
+    <div class="metric"><b>12</b><small>WEEKENDS</small></div>
+  </div>
+  <div class="masonry">
+    <figure><img src="assets/asset-06.png" alt="TTW war room"><div class="caption">LIVE FROM THE TTW WAR ROOM</div></figure>
+    <figure><img src="assets/asset-07.jpg" alt="TTW tacos"><div class="caption">CUSTOMER R&D</div></figure>
+    <figure><img src="assets/asset-10.png" alt="TTW weekend"><div class="caption">WEEKEND BATCH</div></figure>
+    <figure><img src="assets/asset-09.jpg" alt="TTW product"><div class="caption">PACKED WITH LOVE</div></figure>
+    <figure><img src="assets/asset-05.JPG" alt="Maneet portrait"><div class="caption">THE PERSON BEHIND THE BOX</div></figure>
+    <figure><img src="assets/asset-16.PNG" alt="TTW menu/creative"><div class="caption">SOLD OUT? MAYBE.</div></figure>
+  </div>
+  <div class="popup">
+    <div><p class="mono">THE INTERNET, OFFLINE</p><h3 class="section-title" style="font-size:clamp(2.3rem,5vw,4.5rem)">TTW went from kitchen batches to campus.</h3><p class="lede">A real-world popup, real customers, real conversations — not just an Instagram page.</p></div>
+    <img src="assets/asset-26.JPG" alt="TTW campus popup">
+  </div>
+</section>
+
+<section class="page gingham green" id="reviews">
+  <span class="page-no mono">MKT / 05</span>
+  <p class="mono">THE INTERNET SAID...</p>
+  <h2 class="section-title">Probably my favourite form of market research.</h2>
+  <div class="reviews">
+    <figure class="review"><img src="assets/asset-11.PNG" alt="Customer review"><div class="tag">PRODUCT FEEDBACK</div></figure>
+    <figure class="review"><img src="assets/asset-12.PNG" alt="Customer review"><div class="tag">REPEAT CUSTOMER</div></figure>
+    <figure class="review"><img src="assets/asset-13.PNG" alt="Customer review"><div class="tag">CUSTOMER R&D</div></figure>
+    <figure class="review"><img src="assets/asset-14.PNG" alt="Customer review"><div class="tag">THE RECEIPTS</div></figure>
+    <figure class="review"><img src="assets/asset-15.PNG" alt="Customer review"><div class="tag">THE GOOD STUFF</div></figure>
+  </div>
+</section>
+
+<section class="page" id="content">
+  <span class="page-no mono">MKT / 06</span>
+  <p class="mono">THINGS I PUT INTO THE WORLD</p>
+  <h2 class="section-title">Not just tacos. The stories around them.</h2>
+  <p class="lede">Reels, product stories, packaging, campaigns, campus experiences and the little creative decisions that make a brand feel like a brand.</p>
+  <div class="gallery">
+    <div class="tile big"><img src="assets/asset-17.PNG" alt="TTW creative"><span class="play">OPEN ME →</span></div>
+    <div class="tile"><img src="assets/asset-18.jpg" alt="TTW creative"></div>
+    <div class="tile"><img src="assets/asset-19.PNG" alt="TTW creative"></div>
+    <div class="tile"><img src="assets/asset-27.jpg" alt="Master's Union project"></div>
+    <div class="tile"><img src="assets/asset-28.jpg" alt="Master's Union project"></div>
+  </div>
+  <div style="margin-top:35px"><button class="open" onclick="openVideo('assets/asset-39.MOV')">PLAY A REEL →</button></div>
+</section>
+
+<section class="page gingham" id="mu">
+  <span class="page-no mono">MKT / 07</span>
+  <p class="mono">THE CURRENT CHAPTER</p>
+  <h2 class="section-title">Master's Union — PGP Technology & Business Management.</h2>
+  <p class="lede">Currently learning how technology, business, consumers and creativity intersect.</p>
+  <div class="metrics">
+    <div class="metric"><b>BUILD</b><small>DROPSHIPPING EXPERIMENT</small></div>
+    <div class="metric"><b>THINK</b><small>CASE + STRATEGY WORK</small></div>
+    <div class="metric"><b>CREATE</b><small>EXPERIENCES + CONTENT</small></div>
+  </div>
+  <div class="popup">
+    <div><p class="mono">MY ROLE → CONTENT + CREATIVE</p><h3 class="section-title" style="font-size:clamp(2.3rem,5vw,4.5rem)">The drop-shipping experiment.</h3><p class="lede">Product visuals, social creatives, content and campaign thinking — learning by actually making.</p><button class="open" onclick="document.getElementById('muGallery').scrollIntoView({behavior:'smooth'})">PEEK INSIDE →</button></div>
+    <img src="assets/asset-22.JPG" alt="Master's Union campus">
+  </div>
+  <div id="muGallery" class="masonry">
+    <figure><img src="assets/asset-23.jpg" alt="Master's Union"></figure>
+    <figure><img src="assets/asset-24.jpg" alt="Master's Union"></figure>
+    <figure><img src="assets/asset-25.jpg" alt="Master's Union"></figure>
+    <figure><img src="assets/asset-26.JPG" alt="Campus popup"></figure>
+    <figure><img src="assets/asset-27.jpg" alt="Campus project"></figure>
+    <figure><img src="assets/asset-28.jpg" alt="Campus presentation"></figure>
+  </div>
+</section>
+
+<section class="page" id="life">
+  <span class="page-no mono">MKT / 08</span>
+  <p class="mono">THE OTHER TABS OPEN</p>
+  <h2 class="section-title">Things I make with my hands. Things I get lost in.</h2>
+  <div class="hobby-grid">
+    <div class="board">
+      <h3>PAINT</h3>
+      <div class="paint-grid">
+        <img src="assets/asset-29.PNG" alt="Painting"><img src="assets/asset-30.PNG" alt="Painting"><img src="assets/asset-31.PNG" alt="Painting"><img src="assets/asset-32.JPG" alt="Painting">
+      </div>
+      <p class="note">Sometimes the output doesn't need a strategy.</p>
+    </div>
+    <div>
+      <div class="board">
+        <h3>FOOD I GET EXCITED ABOUT</h3>
+        <div class="food-grid"><img src="assets/asset-33.jpg" alt="Food"><img src="assets/asset-34.PNG" alt="Food"><img src="assets/asset-35.PNG" alt="Food"><img src="assets/asset-36.JPG" alt="Food"></div>
+      </div>
+      <div class="music" style="margin-top:18px">
+        <div><div class="mono">CURRENTLY PLAYING</div><h3 style="font-size:2.2rem;margin:8px 0">Dilawara</h3><div class="script" style="font-size:1.6rem">PropheC · plus Himesh Reshammiya on repeat</div></div>
+        <a href="https://open.spotify.com/album/6Q9uRhFdTKxWGItb71JcQh" target="_blank" rel="noopener">LISTEN ON SPOTIFY ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="pet-card">
+    <div class="pet-stamp">TTW BRAND AMBASSADOR</div>
+    <div class="pet-label">TIGER + KAJU</div>
+    <p style="max-width:600px">The two who have seen all the versions of me.</p>
+    <img src="assets/asset-37.JPG" alt="Tiger and Kaju">
+  </div>
+</section>
+
+<section class="page gingham green" id="last">
+  <span class="page-no mono">MKT / 09</span>
+  <div class="childhood">
+    <div class="child-pics">
+      <img src="assets/asset-02.jpg" alt="Maneet as a child">
+      <img src="assets/asset-03.jpg" alt="Maneet as a child">
+    </div>
+    <div>
+      <p class="mono">THE LAST PAGE</p>
+      <h2 class="section-title">SHE HAD NO IDEA.</h2>
+      <p class="lede">She didn't know she'd work at Deloitte.<br><br>She didn't know she'd start selling tacos.<br><br>She didn't know she'd go back to school.<br><br>She didn't know she'd spend weekends making content, cooking, painting and figuring things out.</p>
+      <p class="note" style="font-size:2.5rem">I'M STILL FIGURING IT OUT.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page connect" id="connect">
+  <span class="page-no mono">MKT / 10</span>
+  <p class="mono">LET'S CONNECT</p>
+  <h2 class="section-title">OPEN A TAB. SAY HI.</h2>
+  <p class="lede">If something here made you curious, that's probably a good enough reason to talk.</p>
+  <div class="links">
+    <a class="link" href="https://www.instagram.com/thetacoweekend/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+    <a class="link" href="https://www.linkedin.com/in/maneet-kaur-3949241a8/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+    <a class="link" href="mailto:maneetk53@gmail.com">EMAIL ME ↗</a>
+  </div>
+  <p class="note" style="margin-top:60px">MKT · DELHI · STILL MAKING THINGS.</p>
+</section>
+<footer class="footer"><span class="mono">MKT / 2026</span><span class="mono">MADE WITH TOO MANY TABS OPEN</span></footer>
+
+<div class="modal" id="modal" onclick="closeModal(event)"><div class="modal-inner"><button class="close" onclick="closeModal()">CLOSE ×</button><img id="modalImg" src="" alt=""><video id="modalVideo" controls playsinline style="display:none"></video></div></div>
+<script>
+const sections=[...document.querySelectorAll('section')], dots=[...document.querySelectorAll('.progress i')];
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){const i=sections.indexOf(e.target);dots.forEach((d,j)=>d.classList.toggle('active',j===Math.min(i,dots.length-1)))}}),{threshold:.35});
+sections.forEach(s=>io.observe(s));
+function openImage(src){const m=document.getElementById('modal'),im=document.getElementById('modalImg'),v=document.getElementById('modalVideo');v.style.display='none';im.style.display='block';im.src=src;m.classList.add('show')}
+function openVideo(src){const m=document.getElementById('modal'),im=document.getElementById('modalImg'),v=document.getElementById('modalVideo');im.style.display='none';v.style.display='block';v.src=src;m.classList.add('show');v.play().catch(()=>{})}
+function closeModal(e){if(!e||e.target.id==='modal'||e.target.classList.contains('close')){document.getElementById('modal').classList.remove('show');document.getElementById('modalVideo').pause()}}
+document.querySelectorAll('.masonry img,.gallery img,.paint-grid img,.food-grid img,.child-pics img,.polaroid img,.popup img').forEach(img=>img.addEventListener('click',()=>openImage(img.src)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
